@@ -4,4 +4,4 @@ RUN mkdir -p /etc/openresty \
     && echo "$CONFIG_JSON" > /etc/openresty/config.json
 
 FROM ghcr.io/nekohy/nekoopenresty:main
-COPY /etc/openresty/config.json /etc/openresty/
+COPY --from=builder /etc/openresty/config.json /etc/openresty/
